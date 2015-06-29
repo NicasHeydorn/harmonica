@@ -1,0 +1,70 @@
+
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	overflow-x: hidden;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+h1 {
+	font-weight: normal;
+	margin: 0;
+	font-size: 90px;
+	color: #333;
+}
+p {
+	margin: 0;
+}
+.head p {
+	font-size:48px;
+	padding-left:20px;
+	margin: -35px 0 10px 0;
+}
+.head {
+	padding-left:30px;
+}
+.mainWrap {
+	width: 66%;
+	margin: 0 0 0 10vw;
+	background: #efefef;
+	height: 100%;
+	position: relative;
+}
+
+.controls {
+	font-size:28px;
+	margin: 10px;
+}
+
+.controls label {
+	padding: 5px 15px;
+}
+
+.harmonica {
+	height: 600px;
+	background-color: #ddd;
+	position: relative;
+	overflow: hidden;
+}
+
+
+
+.harmonica > * {
+	height: 100%;
+	width: 62%;
+	position: absolute;
+	transition: all 1s cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Ease-Out Quad */
+	cursor: pointer;
+	box-shadow: 0 0 20px #333;
+}
+
+.harmonica > *:nth-child(3n+1) {
+	background-color: #098FB2;
+}
+.harmonica > *:nth-child(3n+2) {
+	background-color: #FF0055;
+}
+.harmonica > *:nth-child(3n+3) {
+	background-color: #FFED19;
+}
