@@ -13,10 +13,10 @@ Just include the **harmonica.js** file in your page's head, like so:
 
 `<script src="harmonica.js"></script`
 
-Then, create a new instance of Harmonica, providing a classname as an argument in any javascript file included in your page:
+Then, create a new instance of Harmonica, providing a selector as an argument in any javascript file included in your page:
 
 ```javascript
-var harmonica = new Harmonica('harmonica');
+var harmonica = new Harmonica('.container');
 ```
 
 You can pass an object containing options as a second argument. The options are as following:
@@ -30,7 +30,8 @@ You can pass an object containing options as a second argument. The options are 
 
 ### Demo
 
-To see Harmonica in action, see the demo project in the /demo directory.
+To see Harmonica in action, see http://nicasheydorn.github.io/harmonica/harmonica_demo.html .
 
 ### Feedback
+
 If you have suggestions, feel free to contact me.
