@@ -24,21 +24,13 @@ You can pass an object containing options as a second argument. The options are 
 
 | option        | effect           |
 | ------------- |-------------|
-| offset      | The distance between stacked elements.
-*Default: The remaining space in the container is divided equally between the collapsed elements.* |
-| zOffset      | A value that is added to the zIndex of the elements. The elements' z-index increases by 10 per element. 
-*Default: 0* |
-| slideCallback | A function to call when an element has been slided. The element itself and the direction ('left' / 'right') are passed in as arguments.
-*Default: None*      |
+| **offset**      | The distance between stacked elements. *Default: The remaining space in the container is divided equally between the collapsed elements.* |
+| **zOffset**      | A value that is added to the zIndex of the elements. The elements' z-index increases by 10 per element.  *Default: 0* |
+| **slideCallback** | A function to call when an element has been slided. The element itself and the direction ('left' / 'right') are passed in as arguments. *Default: None*      |
 
 ### Demo
 
 To see Harmonica in action, see the demo project in the /demo directory.
 
 ### Feedback
-
-<<<<<<< HEAD
 If you have suggestions, feel free to contact me.
-=======
-If you have suggestions, feel free to contact me.
->>>>>>> Initial commit
