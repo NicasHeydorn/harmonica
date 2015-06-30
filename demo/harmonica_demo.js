@@ -7,7 +7,7 @@ function addShadow(element, direction) {
 }
 
 window.onload = function() {
-	var harmonica = new Harmonica('harmonica', {slideCallback: addShadow});
+	var harmonica = new Harmonica('.harmonica', {slideCallback: addShadow});
 	window.harmonica_offset = 100
 
 	document.getElementsByClassName('js-addElement')[0].onclick = function() {

@@ -11,13 +11,42 @@ var Harmonica = function(container, options) {
 
 	var container, elements, elementCount, positions, offset, zOffset, slideCallback;
 
+	/*
+	 * Compatibility IE8
+	 */
+	if (!Array.prototype.indexOf) {
+		Array.prototype.indexOf = function(obj, start) {
+		     for (var i = (start || 0), j = this.length; i < j; i++) {
+		         if (this[i] === obj) { return i; }
+		     }
+		     return -1;
+		}
+	}
+	var eventListener = function(element, eventToBind, functionToCall) {
+		if (element.addEventListener) {
+		    element.addEventListener(eventToBind, functionToCall, false);
+		}
+		else {
+			eventToBind = "on" + eventToBind; //Bypass event names. Should work for most events
+		    element.attachEvent(eventToBind, functionToCall);
+		}
+	}
 
+	Array.prototype.contains = function(obj) {
+	    var i = this.length;
+	    while (i--) {
+	        if (this[i] === obj) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
 
 	/*
 	 * Initialize the Elements and bind events
 	 */
 	var init = function(options) {
-		container = document.getElementsByClassName(container)[0];
+		container = document.querySelectorAll(container)[0];
 		elements = container.children;
 		elementCount = elements.length;
 
@@ -36,12 +65,13 @@ var Harmonica = function(container, options) {
 	 * Bind Events
 	 */
 	var bind = function() {
-		for (i=0; i < elementCount; i++) {
-			elements[i].addEventListener("click", function(ev) {
-				slideHandler(ev.target);
-			});
-		}
-	};
+			for (i=0; i < elementCount; i++) {
+				eventListener(elements[i], "click", function(ev) {
+					var target = ev.target || ev.srcElement; //IE8 Compatibility
+						slideHandler(target);
+				});
+			}
+		};
 
 
 	/*
