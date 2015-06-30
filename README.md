@@ -31,7 +31,7 @@ You can pass an object containing options as a second argument. The options are 
 
 ### Demo
 
-To see Harmonica in action, see http://nicasheydorn.github.io/harmonica .
+To see Harmonica in action, see http://nicasheydorn.github.io/harmonica/index.html .
 
 ### Feedback
 
