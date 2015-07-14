@@ -46,7 +46,13 @@ var Harmonica = function(container, options) {
 	 * Initialize the Elements and bind events
 	 */
 	var init = function(options) {
-		container = document.querySelectorAll(container)[0];
+		var containers = document.querySelectorAll(container);
+		if (containers.length < 1) {
+			console.log('Could not initialize Harmonica: Did not find an element with selector '+container);
+			return false
+		}
+		container = containers[0];
+
 		elements = container.children;
 		elementCount = elements.length;
 
@@ -154,5 +160,5 @@ var Harmonica = function(container, options) {
 		}
 	};
 
-	init(options);
+	return init(options);
 }
